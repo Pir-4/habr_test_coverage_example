@@ -11,10 +11,10 @@ def cli():
     pass
 
 
-@click.command()
+@cli.command()
 def start_test_app():
     uvicorn.run(
-        app='test.app',
+        app='main:app',
         loop='uvloop',
         host='0.0.0.0'
     )
