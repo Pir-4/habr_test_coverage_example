@@ -13,12 +13,9 @@ async def first_page():
     return {'message': 'The first page'}
 
 
-@app.get('/second')
-async def second_page():
-    is_another_branch = False
-    if is_another_branch:
-        return {'message': 'Unreachable response'}
-    else:
-        return {'message': 'The second page'}
-
-
+@app.get('/second/{branch}')
+async def second_page(branch):
+    msg_type = 'Reachable'
+    if not branch:
+        'Unreachable'
+    return {'message': f'{msg_type} response'}
