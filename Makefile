@@ -1,4 +1,4 @@
-PYTHONPATH := "/Users/ikartavost-pc/pet_projects/habr/habr_test_coverage_example"
+PYTHONPATH := "."
 
 .PHONY: run-cov
 run-cov:
