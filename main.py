@@ -1,16 +1,21 @@
-# This is a sample Python script.
+from fastapi import FastAPI
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.ty
+app = FastAPI()
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+@app.get('/')
+async def index_page():
+    return {'message': 'Hello habr'}
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+@app.get('/first')
+async def first_page():
+    return {'message': 'The first page'}
+
+
+@app.get('/second/{branch}')
+async def second_page(branch):
+    msg_type = 'Reachable'
+    if not branch:
+        'Unreachable'
+    return {'message': f'{msg_type} response'}

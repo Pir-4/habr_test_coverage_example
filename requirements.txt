@@ -1,0 +1,4 @@
+fastapi~=0.100.0
+click~=8.1.4
+uvicorn~=0.22.0
+uvloop~=0.17.0
