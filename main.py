@@ -17,5 +17,5 @@ async def first_page():
 async def second_page(branch):
     msg_type = 'Reachable'
     if not branch:
-        'Unreachable'
+        msg_type = 'Unreachable'
     return {'message': f'{msg_type} response'}
